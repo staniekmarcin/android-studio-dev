@@ -7,11 +7,11 @@
 # Built application files
 /*/build/
 
-# Files for the ART/Dalvik VM
-*.dex
-
 # Java class files
 *.class
+
+# Files for the ART/Dalvik VM
+*.dex
 
 # Generated files
 bin/
