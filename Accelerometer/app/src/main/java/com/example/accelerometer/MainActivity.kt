@@ -1,5 +1,6 @@
 package com.example.accelerometer
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -13,6 +14,17 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
     lateinit var sensorManager: SensorManager
 
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+        TODO("Not yet implemented")
+    }
+
+    @SuppressLint("SetTextI18n")
+    override fun onSensorChanged(event: SensorEvent?) {
+        accelerometer_data.text = "x = ${event!!.values[0]}\n\n" +
+                "y = ${event.values[1]}\n\n" +
+                "z = ${event.values[2]}"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,13 +37,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         )
     }
 
-    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
-        TODO("Not yet implemented")
-    }
 
-    override fun onSensorChanged(event: SensorEvent?) {
-        accelerometer_data.text = "x = ${event!!.values[0]}\n\n" +
-                "y = ${event.values[1]}" +
-                "z = ${event.values[2]}"
-    }
+
+
 }
