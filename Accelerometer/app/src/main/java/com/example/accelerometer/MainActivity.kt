@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     lateinit var sensorManager: SensorManager
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
-        TODO("Not yet implemented")
     }
 
     @SuppressLint("SetTextI18n")
